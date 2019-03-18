@@ -1,7 +1,10 @@
 package com.example.ignite;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,12 +18,23 @@ public class PartiesActivity extends AppCompatActivity {
 
     ArrayList<Parties> parties = new ArrayList<Parties>();
 
-    parties.add(new Parties(R.drawable.sample_icon, "BJP"));
-    parties.add(new Parties(R.drawable.sample_icon, "Congress"));
+    parties.add(new Parties(R.drawable.sample_icon, "Bharatiya Janata Party"));
+    parties.add(new Parties(R.drawable.sample_icon, "Indian National Congress"));
+    parties.add(new Parties(R.drawable.sample_icon, "All India Trinamool Congress"));
+    parties.add(new Parties(R.drawable.sample_icon, "Bahujan Samaj Party"));
+    parties.add(new Parties(R.drawable.sample_icon, "Communist Party of India"));
+    parties.add(new Parties(R.drawable.sample_icon, "Communist Party of India (Marxist)"));
+    parties.add(new Parties(R.drawable.sample_icon, "Nationalist Congress Party"));
 
     PartiesAdapter adapter = new PartiesAdapter(this, parties);
 
     ListView listView =(ListView) findViewById(R.id.parties);
     listView.setAdapter(adapter);
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+        }
+    });
     }
 }

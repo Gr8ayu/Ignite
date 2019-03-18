@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<imageAndText> list =new ArrayList<imageAndText>();
-        list.add(new imageAndText("Election 2019", R.drawable.election2019));
-        list.add(new imageAndText("Leaders", R.drawable.leaders));
-        list.add(new imageAndText("Political Parties", R.drawable.parties));
+        ArrayList<Parties> list =new ArrayList<Parties>();
+        list.add(new Parties( R.drawable.election2019,"Election 2019"));
+        list.add(new Parties( R.drawable.leaders,"Leaders"));
+        list.add(new Parties( R.drawable.parties, "Political Parties"));
 
-        for (final imageAndText temp : list) {
+        for (final Parties temp : list) {
             LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View v = vi.inflate(R.layout.list, null);
 
@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
             rel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(temp.getText() == "Election 2019"){
-                        Toast.makeText(getApplicationContext(),temp.getText(),Toast.LENGTH_SHORT).show();
+                    if(temp.getPartyName() == "Election 2019"){
+                        Toast.makeText(getApplicationContext(),temp.getPartyName(),Toast.LENGTH_SHORT).show();
                     }
-                    else if(temp.getText() == "Leaders"){
-                        Toast.makeText(getApplicationContext(),temp.getText(),Toast.LENGTH_SHORT).show();
+                    else if(temp.getPartyName() == "Leaders"){
+                        Toast.makeText(getApplicationContext(),temp.getPartyName(),Toast.LENGTH_SHORT).show();
                     }
-                    else if(temp.getText() == "Political Parties"){
+                    else if(temp.getPartyName() == "Political Parties"){
                         startActivity(new Intent(getApplicationContext(), PartiesActivity.class));
                     }
                 }
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
             // fill in any details dynamically here
             TextView textView = (TextView) v.findViewById(R.id.mainListText);
-            textView.setText(temp.getText());
+            textView.setText(temp.getPartyName());
             ImageView imageView = (ImageView) v.findViewById(R.id.mainListImage);
-            imageView.setImageResource(temp.getImageID());
+            imageView.setImageResource(temp.getImageResourceId());
 
             // insert into main view
             ViewGroup insertPoint = (ViewGroup) findViewById(R.id.mainList);
