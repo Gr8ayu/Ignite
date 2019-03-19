@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PartiesAdapter extends ArrayAdapter<Parties> {
+public class textAndImageAdapter extends ArrayAdapter<textAndImage> {
 
-    public PartiesAdapter(Activity context, ArrayList<Parties> parties) {
+    public textAndImageAdapter(Activity context, ArrayList<textAndImage> parties) {
         super(context, 0, parties);
     }
 
@@ -26,15 +26,15 @@ public class PartiesAdapter extends ArrayAdapter<Parties> {
                     R.layout.list_parties, parent, false);
         }
 
-        Parties currentParty = getItem(position);
+        textAndImage currentParty = getItem(position);
 
         ImageView partyIconImageView = (ImageView) listItemView.findViewById(R.id.partyIcon);
         partyIconImageView.setImageResource(currentParty.getImageResourceId());
         partyIconImageView.setVisibility(View.VISIBLE);
 
 
-        TextView categoryNameTextView = (TextView) listItemView.findViewById(R.id.partyName);
-        categoryNameTextView.setText(currentParty.getPartyName());
+        TextView categoryNameTextView = (TextView) listItemView.findViewById(R.id.contentName);
+        categoryNameTextView.setText(currentParty.getContentName());
 
         return listItemView;
     }

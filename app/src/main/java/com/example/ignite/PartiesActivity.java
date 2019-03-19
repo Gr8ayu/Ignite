@@ -16,17 +16,17 @@ public class PartiesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parties);
 
-    ArrayList<Parties> parties = new ArrayList<Parties>();
+    ArrayList<textAndImage> parties = new ArrayList<textAndImage>();
 
-    parties.add(new Parties(R.drawable.sample_icon, "Bharatiya Janata Party"));
-    parties.add(new Parties(R.drawable.sample_icon, "Indian National Congress"));
-    parties.add(new Parties(R.drawable.sample_icon, "All India Trinamool Congress"));
-    parties.add(new Parties(R.drawable.sample_icon, "Bahujan Samaj Party"));
-    parties.add(new Parties(R.drawable.sample_icon, "Communist Party of India"));
-    parties.add(new Parties(R.drawable.sample_icon, "Communist Party of India (Marxist)"));
-    parties.add(new Parties(R.drawable.sample_icon, "Nationalist Congress Party"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Bharatiya Janata Party"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Indian National Congress"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "All India Trinamool Congress"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Bahujan Samaj Party"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Communist Party of India"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Communist Party of India (Marxist)"));
+    parties.add(new textAndImage(R.drawable.sample_icon, "Nationalist Congress Party"));
 
-    PartiesAdapter adapter = new PartiesAdapter(this, parties);
+    textAndImageAdapter adapter = new textAndImageAdapter(this, parties);
 
     ListView listView =(ListView) findViewById(R.id.parties);
     listView.setAdapter(adapter);
