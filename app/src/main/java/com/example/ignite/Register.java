@@ -6,33 +6,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
-        Button loginButton = (Button) findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = (Button) findViewById(R.id.RegisterButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(Login.this, MainActivity.class);
+                Intent i = new Intent(Register.this, MainActivity.class);
                 startActivity(i);
             }
         });
 
     }
 
-    public void registerActivity(View v){
-        Intent i = new Intent(Login.this, Register.class);
+    public void loginActivity(View v){
+        Intent i = new Intent(Register.this, Login.class);
         startActivity(i);
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        moveTaskToBack(true);
     }
 }
