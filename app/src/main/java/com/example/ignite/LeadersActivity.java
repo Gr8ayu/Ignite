@@ -17,7 +17,7 @@ public class LeadersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaders);
 
-        ArrayList<textAndImage> leaders = new ArrayList<textAndImage>();
+        final ArrayList<textAndImage> leaders = new ArrayList<textAndImage>();
 
         leaders.add(new textAndImage(R.drawable.sample_icon, "Narendra Modi"));
         leaders.add(new textAndImage(R.drawable.sample_icon, "Rahul Gandhi"));
@@ -36,7 +36,8 @@ public class LeadersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"Details",Toast.LENGTH_SHORT).show();
+                textAndImage temp = leaders.get(position);
+                Toast.makeText(getApplicationContext(),temp.getContentName(),Toast.LENGTH_SHORT).show();
             }
         });
     }

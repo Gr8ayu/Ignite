@@ -24,13 +24,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<textAndImage> list =new ArrayList<textAndImage>();
         list.add(new textAndImage( R.drawable.election2019,"Election 2019"));
         list.add(new textAndImage( R.drawable.leaders,"Leaders"));
-        list.add(new textAndImage( R.drawable.parties, "Political textAndImage"));
+        list.add(new textAndImage( R.drawable.parties, "Political Parties"));
 
         for (final textAndImage temp : list) {
             LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View v = vi.inflate(R.layout.list, null);
 
             RelativeLayout rel = (RelativeLayout) v.findViewById(R.id.selectMenu);
+
+
             rel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     else if(temp.getContentName() == "Leaders"){
                         startActivity(new Intent(getApplicationContext(), LeadersActivity.class));
                     }
-                    else if(temp.getContentName() == "Political textAndImage"){
+                    else if(temp.getContentName() == "Political Parties"){
                         startActivity(new Intent(getApplicationContext(), PartiesActivity.class));
                     }
                 }

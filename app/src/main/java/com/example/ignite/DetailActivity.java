@@ -2,6 +2,7 @@ package com.example.ignite;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -82,15 +83,15 @@ public class DetailActivity extends AppCompatActivity {
         // Key details
         ArrayList<keyValue> contacts = new ArrayList<>();
         contacts.add(new keyValue("facebook","www.facebook.com/bjp"));
-        contacts.add(new keyValue("twitter","twitter.com/bjp"));
-        contacts.add(new keyValue("website","bjp.com"));
+        contacts.add(new keyValue("twitter","www.twitter.com/bjp"));
+        contacts.add(new keyValue("website","www.bjp.com"));
 
 
         Collections.reverse(contacts);
         Iterator<keyValue> ite = contacts.iterator();
 
         while (ite.hasNext()) {
-            keyValue temp = ite.next();
+            final keyValue temp = ite.next();
             LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View v = vi.inflate(R.layout.keyvaluepair, null);
 
@@ -99,6 +100,14 @@ public class DetailActivity extends AppCompatActivity {
             key.setText(temp.getKey());
             TextView value = (TextView) v.findViewById(R.id.value);
             value.setText(temp.getValue());
+
+            value.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url ="http://"+ temp.getValue();
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                }
+            });
 
             // insert into main view
             ViewGroup insertPoint = (ViewGroup) findViewById(R.id.contacts);
