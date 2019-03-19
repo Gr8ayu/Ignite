@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),temp.getContentName(),Toast.LENGTH_SHORT).show();
                     }
                     else if(temp.getContentName() == "Leaders"){
-                        Toast.makeText(getApplicationContext(),temp.getContentName(),Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), LeadersActivity.class));
                     }
                     else if(temp.getContentName() == "Political textAndImage"){
                         startActivity(new Intent(getApplicationContext(), PartiesActivity.class));
