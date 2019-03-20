@@ -33,6 +33,10 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(Register.this, MainActivity.class));
+
+        }
 
         Button registerButton = (Button) findViewById(R.id.RegisterButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +52,6 @@ public class Register extends AppCompatActivity {
     }
 
     public void loginActivity(View v){
-        Intent i = new Intent(Register.this, Login.class);
-        startActivity(i);
-    }
-    public void loginActivity(){
         Intent i = new Intent(Register.this, Login.class);
         startActivity(i);
     }
