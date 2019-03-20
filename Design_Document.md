@@ -18,3 +18,5 @@
 ## DetailActivity
 
 > This activity provides detailed information regarding particular political party/Leader.
+
+![](https://i.ibb.co/8bgfHLK/Untitled-Diagram-1.jpg)
