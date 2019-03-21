@@ -16,15 +16,15 @@ public class PartiesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parties);
 
-    ArrayList<textAndImage> parties = new ArrayList<textAndImage>();
+    final ArrayList<textAndImage> parties = new ArrayList<textAndImage>();
 
-    parties.add(new textAndImage(R.drawable.sample_icon, "Bharatiya Janata Party"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "Indian National Congress"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "All India Trinamool Congress"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "Bahujan Samaj Party"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "Communist Party of India"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "Communist Party of India (Marxist)"));
-    parties.add(new textAndImage(R.drawable.sample_icon, "Nationalist Congress Party"));
+    parties.add(new textAndImage(R.drawable.bjp, "Bharatiya Janata Party"));
+    parties.add(new textAndImage(R.drawable.inc, "Indian National Congress"));
+    parties.add(new textAndImage(R.drawable.aitmc, "All India Trinamool Congress"));
+    parties.add(new textAndImage(R.drawable.bsp, "Bahujan Samaj Party"));
+    parties.add(new textAndImage(R.drawable.cpi, "Communist Party of India"));
+    parties.add(new textAndImage(R.drawable.cpim, "Communist Party of India (Marxist)"));
+    parties.add(new textAndImage(R.drawable.ncp, "Nationalist Congress Party"));
 
     textAndImageAdapter adapter = new textAndImageAdapter(this, parties);
 
@@ -33,7 +33,13 @@ public class PartiesActivity extends AppCompatActivity {
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+//            startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+
+            textAndImage temp = parties.get(position);
+
+            Intent intent =new Intent(getApplicationContext(), DetailActivity.class);
+            intent.putExtra("type",temp.getContentName());
+            startActivity(intent);
         }
     });
     }

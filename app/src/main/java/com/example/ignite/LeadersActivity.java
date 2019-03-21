@@ -19,15 +19,15 @@ public class LeadersActivity extends AppCompatActivity {
 
         final ArrayList<textAndImage> leaders = new ArrayList<textAndImage>();
 
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Narendra Modi"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Rahul Gandhi"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Amit Shah"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Mayavati"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Arvind Kejriwal"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "L K Advani"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Sushma Swaraj"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Sonia Gandhi"));
-        leaders.add(new textAndImage(R.drawable.sample_icon, "Smriti Irani"));
+        leaders.add(new textAndImage(R.drawable.namo, "Narendra Modi"));
+        leaders.add(new textAndImage(R.drawable.raga, "Rahul Gandhi"));
+        leaders.add(new textAndImage(R.drawable.amitshah, "Amit Shah"));
+        leaders.add(new textAndImage(R.drawable.mayawati, "Mayavati"));
+        leaders.add(new textAndImage(R.drawable.arvind, "Arvind Kejriwal"));
+        leaders.add(new textAndImage(R.drawable.lkadavani, "L K Advani"));
+        leaders.add(new textAndImage(R.drawable.sushma, "Sushma Swaraj"));
+        leaders.add(new textAndImage(R.drawable.sonia, "Sonia Gandhi"));
+        leaders.add(new textAndImage(R.drawable.smriti, "Smriti Irani"));
 
         textAndImageAdapter adapter = new textAndImageAdapter(this, leaders);
 
@@ -37,6 +37,9 @@ public class LeadersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 textAndImage temp = leaders.get(position);
+                Intent intent =new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("type",temp.getContentName());
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(),temp.getContentName(),Toast.LENGTH_SHORT).show();
             }
         });
