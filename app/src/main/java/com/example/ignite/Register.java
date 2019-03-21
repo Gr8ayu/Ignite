@@ -111,7 +111,7 @@ public class Register extends AppCompatActivity {
         }
 
         // Creating new User With Email and password
-        progressDialog.setMessage("Registering User.");
+        progressDialog.setMessage("Registering User...");
         progressDialog.show();
         createUser(email,password);
 
