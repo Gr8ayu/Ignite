@@ -1,6 +1,6 @@
 # Problem Statement
 
-> ####  During election voters find it difficult to select right candidate for their constituency. Many unaware voters follow particular voter on the basis of caste, religion their propaganda. Also big political parties spread fake news in favour of themselves or against other competing parties. Those voters who are 
+> ####  During election voters find it difficult to select right candidate for their constituency. Many unaware voters follow particular voter on the basis of caste, religion their propaganda. Also big political parties spread fake news in favour of themselves or against other competing parties. Those voters who use social media and search engines like Google to gather information regarding election are easily manipulated by polarised results of these websites, these websites even track user's political views to manipulate the outcome of the election. 
 
 <br>
 <hr>
@@ -19,7 +19,7 @@
  - Information regarding their past experiences.
  - Their social medias and popularity among citizens.
  
- > ### 2. Info About Political
+ > ### 2. Info About Political Parties
  - Basic details about popular political parties and alliances
  - Their Ideology.
  - Provide latest news about them.
