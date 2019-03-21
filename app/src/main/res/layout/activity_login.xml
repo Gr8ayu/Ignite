@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="LOGIN"
-        android:textColor="#F45503"
+        android:textColor="#FF9800"
         android:textSize="24sp"
         android:textStyle="bold"
         app:fontFamily="sans-serif"
@@ -27,11 +27,12 @@
     <EditText
         android:id="@+id/emailId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_below="@+id/logintitle"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="16dp"
+        android:paddingLeft="16dp"
         android:background="#1E1E1E"
         android:ems="10"
         android:hint="Email ID"
@@ -43,11 +44,12 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_below="@+id/emailId"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
+        android:paddingLeft="16dp"
         android:background="#1E1E1E"
         android:ems="10"
         android:hint="Password"
@@ -63,9 +65,9 @@
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="#F45503"
+        android:background="#FF9800"
         android:text="Login"
-        android:textColor="#F1DD0D"
+        android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
     <ImageView
@@ -83,8 +85,8 @@
         android:layout_below="@+id/loginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:text="New Account ? Register here."
+        android:text="New Account? Register here."
         android:onClick="registerActivity"
-        android:textColor="#F68302" />
+        android:textColor="#FF9800" />
 
 </RelativeLayout>
