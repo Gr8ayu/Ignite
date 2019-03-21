@@ -96,7 +96,7 @@ public class Login extends AppCompatActivity {
         }
 
         // Creating new User With Email and password
-        progressDialog.setMessage("Logging User.");
+        progressDialog.setMessage("Logging in user...");
         progressDialog.show();
         loginUser(email,password);
 
